@@ -1,0 +1,103 @@
+<div class="aFtable-responsive no-margin " style="overflow-y: auto; overflow-x: auto;">
+        <div class="tab-content no-border no-padding">
+            <div id="inbox" class="tab-pane in active" style="overflow-y: auto;overflow-x: auto;margin-left: 10px;margin-right: 10px;">
+                <table id="tb_roundingList"  class="table table-striped table-bordered table-hover crdTable dataTable">
+    
+                    <!--<table id="tb_dailyBilling" class="table table-striped table-hover dataTable">-->    
+                    <thead>
+                        <tr> 
+                            <th class="sorting_disabled schedulerTrunc" style="width:150px;text-align: center">ID</th>
+                                      <th class="mysorts schedulerTrunc" style="width:290px;text-align: center">Clinic</th>
+                                      <th class="sorting_asc schedulerTrunc" style="width:190px;text-align: center">Category</th>
+                                      <th class="sorting_desc schedulerTrunc" style="width:190px;text-align: center">Subcategory</th>
+                                      <th class="mysorts schedulerTrunc" style="width:290px;text-align: center">Opened</th>
+                                     <th class="sorting_disabled schedulerTrunc" style="width:290px;text-align: center">User</th>
+                                     <th class="sorting_disabled schedulerTrunc" style="width:290px;text-align: center">Days</th>
+                                     
+                                     
+                                      
+                                      
+                                      
+                                      <th class="sorting_disabled schedulerTrunc" style="width:150;text-align: center;min-width: 150px">Assignee</th>
+                                      <th class="sorting_disabled schedulerTrunc" style="text-align: center;min-width: 100px">Status</th>
+                                      <th class="sorting_disabled schedulerTrunc" style="text-align: center;min-width: 100px">Pull date</th>
+                                      <th class="sorting_disabled schedulerTrunc" style="text-align: center;min-width: 100px">Priority</th>
+                        </tr>
+    
+                    </thead>
+                    <tr>       
+    
+                    </tr>
+                    <tbody id="td_roundingList" *ngFor="let res of results">
+                      <tr>       
+                        <td class="VLPatName left-align" id="patname" ><a href="javascript:void(0)" (click)="OnClickIssue($event)"><span   data-rel="tooltip">{{res.ID}}</span></a></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">{{res.Clinic}}</span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">{{res.Category}}</span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">{{res.Subcategory}}</span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">{{res.Opened}}</span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">{{res.User}}</span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">{{res.Days}}</span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">{{res.Assignee}}</span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">
+                                <mat-form-field style="width: 100px;height: 40px;">
+                                        <mat-label>Status</mat-label>
+                                        <mat-select>
+                                          <mat-option>None</mat-option>
+                                          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                        </span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">
+                                <mat-form-field style="width: 100px;height: 40px;">
+                                        <input matInput [matDatepicker]="picker1" placeholder="Pull date" [formControl]="date">
+                                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                      </mat-form-field>
+                        </span></td>
+                        <td class=" left-align center schedulerTrunc" id="DOB"  ><span   data-rel="tooltip">
+                                <mat-form-field style="width: 100px;height: 40px;">
+                                        <mat-label>Priority</mat-label>
+                                        <mat-select>
+                                          <mat-option>None</mat-option>
+                                          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                        </span></td>
+                        <!--<td>
+                          <button id="btnNotes" title="Add Notes"  class="btn btn-minier btn-info" title="Add or edit notes">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        
+                       <button id="btnUploadorDownload" class="btn btn-minier btn-purple" title="Documents"><span class="white">
+                                <i class="ace-icon fa fa-file bigger-110"></i>
+                            </span></button>
+                        <button id="btnDeletePatient" class="btn btn-minier btn-danger" title="Delete Patient">X</button>
+                        <button id="btnDischargePatient" class="btn btn-minier btn-yellow" title="Discharge patient from BPCI List">D</button> 
+                       
+                        <button id="btnEditCharges" class="btn btn-minier btn-info"  title="Edit Charges">E</button> 
+                        <button id="btnCancel" class="btn btn-minier btn-grey hide"  title="Cancel">C</button> 
+                        <button id="btnSave" class="btn btn-minier btn-primary hide"  title="Save">S</button> 
+                         </td>-->
+                      </tr> 
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <input type="text" name="length" [(ngModel)]="length" ngDefaultControl class="hidden">
+            <input type="text" name="pageSize" [(ngModel)]="pageSize" ngDefaultControl class="hidden">
+            <input type="text" name="pageSizeOptions" [(ngModel)]="pageSizeOptions" ngDefaultControl class="hidden">
+        </div>
+        <div class="card-footer pb-0 pt-3"  >
+            <mat-paginator [length]="length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions" showFirstLastButtons (page)="pageEvent = onPaginateChange($event)"
+            (selectChange)="onPaginateChange($event)">
+</mat-paginator>
+        </div>
+    </div>
+    
+
