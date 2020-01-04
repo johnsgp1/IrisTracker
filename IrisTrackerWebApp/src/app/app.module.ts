@@ -14,6 +14,8 @@ import { appRoutes } from './routes';
 import { JwPaginationComponent } from 'jw-angular-pagination';
 import { IssueListComponent } from './home/issue-list/issue-list.component';
 import { IssueDetailsComponent } from './home/issue-details/issue-details.component';
+import { AddNewIssueComponent } from './home/add-new-issue/add-new-issue.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { IssueDetailsComponent } from './home/issue-details/issue-details.compon
     HomeComponent,
     JwPaginationComponent,
     IssueListComponent,
-    IssueDetailsComponent
+    IssueDetailsComponent,
+    AddNewIssueComponent
     
   ],
   imports: [
@@ -30,6 +33,7 @@ import { IssueDetailsComponent } from './home/issue-details/issue-details.compon
     FormsModule,
     ReactiveFormsModule,
     DemoMaterialModule,
+    NgbModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

@@ -1,11 +1,11 @@
-<mat-card style="margin-bottom: 20px;">
+<mat-card style="margin-bottom: 20px;padding-top: 5px;padding-bottom: 5px;">
         <div class="container" style="margin-left: 12px;">
            <div class="row">
                 <label for="inputEmail4" style="color:rgb(11, 120, 184);font-size: 20px;">454-BCBS Enrollment issue</label>
            </div>
         </div>  
 </mat-card>
-<mat-card>
+<mat-card style="padding-top: 5px;padding-bottom: 5px;" >
 <div class="container">
         <div class="row">
            <div class="col-sm-3">
@@ -63,13 +63,13 @@
                     <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label" style="font-size: 16px;">Summary :</label>
                             <div class="col-sm-10">
-                                    <label for="inputEmail4" style="color:rgb(41, 45, 46)" >454-BCBS Enrollment issue</label>
+                                    <label for="inputEmail4" style="color:rgb(41, 45, 46)" >For best results, connect your laptop or computer directly to your home’s router with an ethernet cable instead of using WiFi. ... Understanding Your Speed Test Results. ... With Spectrum Internet and Mobile, you have unlimited access to our nationwide network of WiFi hotspots.</label>
                             </div>
                           </div>
                           <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label" style="font-size: 16px;">Details :</label>
                             <div class="col-sm-10">
-                                    <label for="inputEmail4" style="color:rgb(41, 45, 46)">454-BCBS Enrollment issue</label>
+                                    <label for="inputEmail4" style="color:rgb(41, 45, 46)">For best results, connect your laptop or computer directly to your home’s router with an ethernet cable instead of using WiFi. ... Understanding Your Speed Test Results. ... With Spectrum Internet and Mobile, you have unlimited access to our nationwide network of WiFi hotspots.</label>
                             </div>
                           </div>
                        
@@ -77,8 +77,10 @@
                                     <div class="form-group row">
                                             <label for="inputPassword3" class="col-sm-2 col-form-label" style="font-size: 16px;color:rgb(26, 137, 241)">Add note</label>
                                            
+                                            <!--<textarea ></textarea>-->
                                             <textarea style="margin: 0px; width: 948px; height: 50px;"></textarea>
-                                            <div class="form-group" style="margin-left: 200px;">
+                                            <!--<div class="form-group">-->
+                                              <div class="form-group" style="margin-left: 200px;">
                                                     <div class="col-sm-4">
                                                             <label for="file">Attachment</label>
                                                             <input type="file"
@@ -102,11 +104,37 @@
                </div>
             </div>  
     </mat-card>
-    <mat-card>
-            <div class="container">
+    <mat-card style="margin-top: 20px;overflow-x: scroll;overflow-y: scroll;height: 500px;">
             <div class="row">
-                    <mat-card>
-                         gfgfgfgfgfgfg
+                    <label  for="inputEmail4" style="color:rgb(11, 120, 184);font-size: 16px;">Notes</label>
+            </div>
+            <div class="container" *ngFor="let data of results">
+            <div class="row" >
+                    <mat-card style="margin-top: 20px;">
+                         <div class="row">
+                             <div class="col-sm-6">
+                                    <label for="inputEmail4" style="color:rgb(11, 120, 184);font-size: 16px;">Krisi caton on 18/12/2019 @ 2:54 PM CST</label>
+                             </div>
+                             <div class="col-sm-6">
+                                    <label class="pull-right" for="inputEmail4" style="color:rgb(11, 120, 184);font-size: 16px;">20 minutes</label>
+                            </div>
+                               
+                         </div>
+                         <div class="row">
+                                <label for="inputEmail4" style="color:rgb(41, 45, 46);padding-left: 5px;" >For best results, connect your laptop or computer directly to your home’s router with an ethernet cable instead of using WiFi. ... Understanding Your Speed Test Results. ... With Spectrum Internet and Mobile, you have unlimited access to our nationwide network of WiFi hotspots.</label>
+                         </div>
+                         <div class="row">
+                            <div class="col-sm-4">
+                                    <label class="pull-right" for="inputEmail4" style="font-size: 16px;"><a>Add Comment</a></label>
+                            </div>
+                            <div class="col-sm-4">
+                                    <label class="pull-right" for="inputEmail4" style="font-size: 16px;"><a>Comments 2</a></label>
+                            </div>
+                            <div class="col-sm-4">
+                                    <label class="pull-right" for="inputEmail4" style="font-size: 16px;"><a>Download Attachment</a></label>
+                            </div>
+                                  
+                            </div>
                     </mat-card>  
             </div>
             </div>

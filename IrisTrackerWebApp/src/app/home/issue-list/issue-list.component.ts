@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {PageEvent} from '@angular/material/paginator';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+//import * from jquery
+declare var $:any;
 @Component({
   selector: 'app-issue-list',
   templateUrl: './issue-list.component.html',
@@ -29,7 +32,8 @@ states: string[] = [
 ];
 date = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
-  constructor(private router:Router) { }
+  closeResult: string;
+  constructor(private router:Router,private modalService: NgbModal) { }
 
   ngOnInit() {
   }
@@ -39,5 +43,24 @@ date = new FormControl(new Date());
   OnClickIssue(events:any){
     alert('hihi')
 this.router.navigate(['/Home',{outlets:{home:['IssueDetails']}}])
+  }
+  OnAddNewIssue(ev:any){
+alert("New Issue")
+  }
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 }

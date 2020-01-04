@@ -1,3 +1,8 @@
+<div class="row">
+        <a href="#modal-form1" role="button" title="Add New Issue" data-target="#staticBackdrop"  data-toggle="modal" style="color: #609BC4;padding-right: 35px;" (click)="OnAddNewIssue($event)"  class="pull-right"><i class="ace-icon fa fa-plus bigger-140 linkco" style="color: rgb(96, 155, 196);"></i></a>
+    
+</div>
+
 <div class="aFtable-responsive no-margin " style="overflow-y: auto; overflow-x: auto;">
         <div class="tab-content no-border no-padding">
             <div id="inbox" class="tab-pane in active" style="overflow-y: auto;overflow-x: auto;margin-left: 10px;margin-right: 10px;">
@@ -98,6 +103,26 @@
             (selectChange)="onPaginateChange($event)">
 </mat-paginator>
         </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel" style="color:rgb(9, 120, 194);font-size:18px;">Add New Issue</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="min-height: 480px;">
+            <app-add-new-issue></app-add-new-issue>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!--<button type="button" class="btn btn-primary">Understood</button>-->
+          </div>
+        </div>
+      </div>
     </div>
     
 
